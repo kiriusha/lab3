@@ -15,7 +15,7 @@
 #     def __iter__(self):
 #         return self
 #
-#     def __next__(self):
+#     def __next__(self):3
 #         if self.n < 1:
 #             raise StopIteration
 #         current = self.n
@@ -90,16 +90,16 @@
 # print("Дней прошло с рождения:", days_passed)
 # print("Дней до следующего дня рождения:", days_until_next)
 
-from datetime import datetime
-
-def format_datetime(dt):
-    months = {
-        1: 'января', 2: 'февраля', 3: 'марта', 4: 'апреля',
-        5: 'мая', 6: 'июня', 7: 'июля', 8: 'августа',
-        9: 'сентября', 10: 'октября', 11: 'ноября', 12: 'декабря'
-    }
-    return f"Сегодня {dt.day} {months[dt.month]} {dt.year} года, время: {dt.hour:02d}:{dt.minute:02d}"
-
-# Пример использования
-now = datetime.now()
-print(format_datetime(now))
+# from datetime import datetime
+#
+# def format_datetime(dt):
+#     months = {
+#         1: 'января', 2: 'февраля', 3: 'марта', 4: 'апреля',
+#         5: 'мая', 6: 'июня', 7: 'июля', 8: 'августа',
+#         9: 'сентября', 10: 'октября', 11: 'ноября', 12: 'декабря'
+#     }
+#     return f"Сегодня {dt.day} {months[dt.month]} {dt.year} года, время: {dt.hour:02d}:{dt.minute:02d}"
+#
+# # Пример использования
+# now = datetime.now()
+# print(format_datetime(now))
