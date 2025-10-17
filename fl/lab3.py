@@ -73,19 +73,33 @@
 # print("Текущая дата:", now.date())
 # print("Текущее время:", now.time())
 
-from datetime import datetime, date
+# from datetime import datetime, date
+#
+# birthday = date(2004, 3, 15)
+# today = date.today()
+#
+# days_passed = (today - birthday).days
+#
+# next_birthday = date(today.year, birthday.month, birthday.day)
+#
+# if next_birthday < today:
+#     next_birthday = date(today.year + 1, birthday.month, birthday.day)
+#
+# days_until_next = (next_birthday - today).days
+#
+# print("Дней прошло с рождения:", days_passed)
+# print("Дней до следующего дня рождения:", days_until_next)
 
-birthday = date(2004, 3, 15)
-today = date.today()
+from datetime import datetime
 
-days_passed = (today - birthday).days
+def format_datetime(dt):
+    months = {
+        1: 'января', 2: 'февраля', 3: 'марта', 4: 'апреля',
+        5: 'мая', 6: 'июня', 7: 'июля', 8: 'августа',
+        9: 'сентября', 10: 'октября', 11: 'ноября', 12: 'декабря'
+    }
+    return f"Сегодня {dt.day} {months[dt.month]} {dt.year} года, время: {dt.hour:02d}:{dt.minute:02d}"
 
-next_birthday = date(today.year, birthday.month, birthday.day)
-
-if next_birthday < today:
-    next_birthday = date(today.year + 1, birthday.month, birthday.day)
-
-days_until_next = (next_birthday - today).days
-
-print("Дней прошло с рождения:", days_passed)
-print("Дней до следующего дня рождения:", days_until_next)
+# Пример использования
+now = datetime.now()
+print(format_datetime(now))
