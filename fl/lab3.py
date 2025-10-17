@@ -54,12 +54,21 @@
 # print("Итоговая сумма вклада:", S)
 # print("Общая прибыль:", profit)
 
-from fractions import Fraction
+# from fractions import Fraction
+#
+# a = Fraction(3, 4)
+# b = Fraction(5, 6)
+#
+# print(f"Сложение: {a + b}")
+# print(f"Вычитание: {a - b}")
+# print(f"Умножение: {a * b}")
+# print(f"Деление: {a / b}")
 
-a = Fraction(3, 4)
-b = Fraction(5, 6)
+from datetime import datetime
 
-print(f"Сложение: {a + b}")
-print(f"Вычитание: {a - b}")
-print(f"Умножение: {a * b}")
-print(f"Деление: {a / b}")
+
+now = datetime.now()
+
+print("Текущая дата и время:", now)
+print("Текущая дата:", now.date())
+print("Текущее время:", now.time())
