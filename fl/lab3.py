@@ -64,11 +64,28 @@
 # print(f"Умножение: {a * b}")
 # print(f"Деление: {a / b}")
 
-from datetime import datetime
+# from datetime import datetime
+#
+#
+# now = datetime.now()
+#
+# print("Текущая дата и время:", now)
+# print("Текущая дата:", now.date())
+# print("Текущее время:", now.time())
 
+from datetime import datetime, date
 
-now = datetime.now()
+birthday = date(2004, 3, 15)
+today = date.today()
 
-print("Текущая дата и время:", now)
-print("Текущая дата:", now.date())
-print("Текущее время:", now.time())
+days_passed = (today - birthday).days
+
+next_birthday = date(today.year, birthday.month, birthday.day)
+
+if next_birthday < today:
+    next_birthday = date(today.year + 1, birthday.month, birthday.day)
+
+days_until_next = (next_birthday - today).days
+
+print("Дней прошло с рождения:", days_passed)
+print("Дней до следующего дня рождения:", days_until_next)
