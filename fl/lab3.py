@@ -37,19 +37,29 @@
 # for num in fibonacci(5):
 #     print(num)
 
-from decimal import Decimal, getcontext
+# from decimal import Decimal, getcontext
+#
+# getcontext().prec = 10
+#
+# P = Decimal(input("Начальная сумма вклада: "))
+# r = Decimal(input("Процентная ставка годовых: "))
+# t = Decimal(input("Срок вклада (в годах): "))
+#
+# S = P * (1 + r / (12 * 100)) ** (12 * t)
+# S = S.quantize(Decimal('0.01'))
+#
+# profit = S - P
+# profit = profit.quantize(Decimal('0.01'))
+#
+# print("Итоговая сумма вклада:", S)
+# print("Общая прибыль:", profit)
 
-getcontext().prec = 10
+from fractions import Fraction
 
-P = Decimal(input("Начальная сумма вклада: "))
-r = Decimal(input("Процентная ставка годовых: "))
-t = Decimal(input("Срок вклада (в годах): "))
+a = Fraction(3, 4)
+b = Fraction(5, 6)
 
-S = P * (1 + r / (12 * 100)) ** (12 * t)
-S = S.quantize(Decimal('0.01'))
-
-profit = S - P
-profit = profit.quantize(Decimal('0.01'))
-
-print("Итоговая сумма вклада:", S)
-print("Общая прибыль:", profit)
+print(f"Сложение: {a + b}")
+print(f"Вычитание: {a - b}")
+print(f"Умножение: {a * b}")
+print(f"Деление: {a / b}")
