@@ -8,20 +8,31 @@
 # upper_words = [word.upper() for word in words if len(word) >= 3]
 # print(upper_words)
 
-class Countdown:
-    def __init__(self, n):
-        self.n = n
+# class Countdown:
+#     def __init__(self, n):
+#         self.n = n
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):
+#         if self.n < 1:
+#             raise StopIteration
+#         current = self.n
+#         self.n -= 1
+#         return current
+#
+#
+# for x in Countdown(5):
+#     print(x)
 
-    def __iter__(self):
-        return self
+def fibonacci(n):
+    a, b = 0, 1
+    count = 0
+    while count < n:
+        yield a
+        a, b = b, a + b
+        count += 1
 
-    def __next__(self):
-        if self.n < 1:
-            raise StopIteration
-        current = self.n
-        self.n -= 1
-        return current
-
-
-for x in Countdown(5):
-    print(x)
+for num in fibonacci(5):
+    print(num)
