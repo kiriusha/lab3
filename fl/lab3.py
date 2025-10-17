@@ -26,13 +26,30 @@
 # for x in Countdown(5):
 #     print(x)
 
-def fibonacci(n):
-    a, b = 0, 1
-    count = 0
-    while count < n:
-        yield a
-        a, b = b, a + b
-        count += 1
+# def fibonacci(n):
+#     a, b = 0, 1
+#     count = 0
+#     while count < n:
+#         yield a
+#         a, b = b, a + b
+#         count += 1
+#
+# for num in fibonacci(5):
+#     print(num)
 
-for num in fibonacci(5):
-    print(num)
+from decimal import Decimal, getcontext
+
+getcontext().prec = 10
+
+P = Decimal(input("Начальная сумма вклада: "))
+r = Decimal(input("Процентная ставка годовых: "))
+t = Decimal(input("Срок вклада (в годах): "))
+
+S = P * (1 + r / (12 * 100)) ** (12 * t)
+S = S.quantize(Decimal('0.01'))
+
+profit = S - P
+profit = profit.quantize(Decimal('0.01'))
+
+print("Итоговая сумма вклада:", S)
+print("Общая прибыль:", profit)
