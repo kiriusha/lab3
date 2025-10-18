@@ -15,7 +15,7 @@
 #     def __iter__(self):
 #         return self
 #
-#     def __next__(self):3
+#     def __next__(self):
 #         if self.n < 1:
 #             raise StopIteration
 #         current = self.n
@@ -37,9 +37,8 @@
 # for num in fibonacci(5):
 #     print(num)
 
-# from decimal import Decimal, getcontext
+# from decimal import Decimal
 #
-# getcontext().prec = 10
 #
 # P = Decimal(input("Начальная сумма вклада: "))
 # r = Decimal(input("Процентная ставка годовых: "))
